@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="/css/muonstyle.css" rel="stylesheet">
+<style type="text/css">
+
+.pos img{
+  width: 30%;
+}
+
+</style>
+</head>
+<body> 
+
+<%- include('layouts/navbar'); -%>
+
+<section class="sec2">
+<div class="container">
+<% for (var i = 0; i < posts.length; i++) { %>
+<a href="/post/<%= posts[i]._id %>" class="pos">
+    <img src="<%= posts[i].image %>" class="attachment-work-featured-image size-work-featured-image" alt="stock-photo-4772348-1500x1000" />
+      <p>Posted by <%= posts[i].userid.username %></p>
+</a>
+<% } %>   
+</div>
+</section>
+
+<%- include('layouts/footer'); -%>
+
+</body>
+</html>

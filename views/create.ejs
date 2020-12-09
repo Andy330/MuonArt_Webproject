@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link href="/css/logsignstyle.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <section class="sec1">
+    <a href="file:///C:/Users/acer/Desktop/MUON.html">
+      <img src="img/Mon.png" width="150" height="50" style="position: relative; float: left">
+    </a>
+  </section>
+
+  <div class="Sign_up">
+    <h1>New Post</h1>
+      <div class="fm">
+        <!-- for browser to know tha tthe form contains mutli media. will encripy multie media and send to server -->
+        <form action="/posts/store" method="POST" enctype="multipart/form-data">
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Title</label>
+              <input type="text" class="form-control" placeholder="Title" id="title" name="title">
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Description</label>
+              <textarea id="body" name="body" class="form-control"></textarea>
+                  <script>
+                  $('#body').summernote({
+                  placeholder: 'Description',
+                  tabsize: 2,
+                  height: 200
+                  });
+                  </script>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Image</label>
+              <input type="file" class="form-control" id="image" name="image">
+            </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+          </div>
+        </form>
+      </div>
+  </div>
+
+  <hr>
+  <%- include('layouts/footer'); -%>
+
+</body>
+
+</html>

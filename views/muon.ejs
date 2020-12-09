@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link href="/css/muonstyle.css" rel="stylesheet">
+</head>
+<body>
+
+<%- include('layouts/navbar'); -%>
+
+
+<section class="sec1">
+	<div class="overlay"></div>
+	<div class="container">
+		<h1 class="title1">The task of art is to stir hearts</h1>
+		<% if(!loggedIn) { %>
+		<a href="/auth/register" class="GetSt">Get Started</a>
+		<% } %>
+	</div>
+</section>
+
+<section class="sec2">
+<div class="container">
+<h2 class="title2">WHATCH TUTORIALS</h2>
+<div class="grid">
+<div class="blockmain">
+<iframe width="400" height="240" style="border-radius: 10px" src="https://www.youtube.com/embed/RAideQvR5c0?controls=1">
+</iframe>
+</div>
+<div class="blockmain">
+<iframe width="400" height="240" style="border-radius: 10px" src="https://www.youtube.com/embed/Z2SNeH9v-Ug?controls=1">
+</iframe>
+</div>
+<div class="blockmain">
+<iframe width="400" height="240" style="border-radius: 10px" src="https://www.youtube.com/embed/5jtfz0row8M?controls=1">
+</iframe>
+</div>
+<div class="blockmain">
+<iframe width="400" height="240" style="border-radius: 10px" src="https://www.youtube.com/embed/j1H2Ag5S10k?controls=1">
+</iframe>
+</div>
+<div class="blockmain">
+<iframe width="400" height="240" style="border-radius: 10px" src="https://www.youtube.com/embed/j4MVV4r13ag?=1">
+</iframe>
+</div>
+<div class="blockmain">
+<iframe width="400" height="240" style="border-radius: 10px" src="https://www.youtube.com/embed/2cmLfd_Hwis?controls=1">
+</iframe>
+</div>
+    </div>
+    </div>
+    </section>
+
+
+<%- include('layouts/footer'); -%>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<ul>
+<% if(!loggedIn) { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/auth/login">Login</a>
+          </li>
+<% } %>
+<% if(loggedIn) { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/auth/logout">Log out</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/profile">Profile</a>
+          </li>
+<% } %>
+<li><a href="#aboutus">About us</a></li>
+<li style="float: left;"> <a class="active"  href="search">
+</a></li>
+ <form action="/search" method="POST">
+  <input type="search" placeholder="Search" name="search">
+  <button class="fix" type="submit"></button>
+</form> 
+  <a class ="logoh" href="/">
+    <img src="img/muon.png" width="150" height="50" style="float: left">
+  </a>
+</ul>
+
+<nav class="header" style="position: sticky; top: 0px;">
+  <a class="hm" href="/Allcats">All Categories</a>
+  <a class="hm" href="#oppo">Opportunities</a>
+  <a class="hm" href="/recent">Recent Publications</a>
+  <a class="hm" href="#help">Help</a>
+</nav>

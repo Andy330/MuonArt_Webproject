@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="/css/logsignstyle.css" rel="stylesheet">
+</head>
+<body>
+<section class="sec1">
+  <a href="/">
+    <img src="img/muon.png" width="150" height="50" style="position: relative; float: left">
+  </a>
+</section>
+
+<section class="Sign_up">
+<span style="font-size: 30px"> Create account </span>
+<div class="fm">
+  <% if(errors != null && errors.length > 0){ %>
+            <ul class="list-group"></ul>
+              <!-- loop through each error -->
+              <% for (var i = 0; i < errors.length; i++) { %>
+                <li class="list-group-item list-group-item-danger"><%= errors[i] %></li> <!-- make error red -->
+              <% } %>
+            </ul>
+          <% } %>
+  <form action="/users/register" method="POST" enctype="multipart/form-data">
+     <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+              <label>User Name</label>
+              <input type="text" class="form-control" placeholder="username..." name="username">
+          </div>
+      </div>
+      <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+              <label>Password</label>
+              <input type="password" class="form-control" placeholder="password..." name="password">
+          </div>
+      </div>
+      <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+              <label>Confirm password</label>
+              <input type="confirm" class="form-control" placeholder="confirm password..." name="confirm" >
+          </div>
+      </div>
+      <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+              <label>Your name</label>
+              <input type="name" class="form-control" placeholder="Your name..." name="name">
+          </div>
+      </div>
+      <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+              <label>Your lastname</label>
+              <input type="lastname" class="form-control" placeholder="Your lastname..." name="lastname">
+          </div>
+      </div>
+          <br>
+      <div class="form-group">
+            <button type="submit" class="btn btn-primary">Register</button>
+      </div>
+  </form>
+</div>
+</section>
+
+<%- include('layouts/footer'); -%>
+
+</body>
+</html>

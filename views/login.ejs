@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link href="/css/logsignstyle.css" rel="stylesheet">
+</head>
+<body>
+  <section class="sec1">
+    <a href="/">
+      <img src="img/muon.pmg" width="150" height="50" style="position: relative; float: left">
+    </a>
+  </section>
+
+<section class="Sign_up">
+<span style="font-size: 30px"> Welcome! </span>
+<div class="fm">
+      <% if(errors != null && errors.length > 0){ %>
+            <ul class="list-group"></ul>
+              <!-- loop through each error -->
+              <% for (var i = 0; i < errors.length; i++) { %>
+                <li class="list-group-item list-group-item-danger"><%= errors[i] %></li> <!-- make error red -->
+              <% } %>
+            </ul>
+          <% } %>
+  <form action="/users/login" method="POST" enctype="multipart/form-data">
+  <div class="control-group">
+      <div class="form-group floating-label-form-group controls">
+          <label>User Name</label>
+          <input type="text" class="form-control" placeholder="User Name" id="username" name="username">
+      </div>
+  </div>
+  <div class="control-group">
+      <div class="form-group floating-label-form-group controls">
+          <label>Password</label>
+          <input type="password" class="form-control" placeholder="Password" id="password" name="password">
+      </div>
+  </div>
+          <br>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Login</button>
+          </div>
+  </form>
+
+  <hr class="or" data-content="Haven't account?">
+
+
+  <a href="/auth/register" class="GetSt">Sign-up</a>
+
+</div>
+</section>
+
+<%- include('layouts/footer'); -%>
+
+</body>
+</html>

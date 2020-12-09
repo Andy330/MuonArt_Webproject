@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="/css/muonstyle.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+</head>
+<body>
+
+<%- include('layouts/navbar'); -%>
+
+<div class="containerpost">
+  <h1 class="post-heading"><%= posts.title %></h1>
+
+
+  <img class="post-image" src= "<%= posts.image %>" />
+
+
+  <article>
+            <div class="col-lg-8 col-md-10 mx-auto">
+          <h3 class="subheading"><%= posts.body %></h3>
+          <span class="min">Posted by
+           <a href="#"><%= posts.userid.username %></a>
+            on <%= posts.datePosted.toLocaleString() %></span>
+        </div>
+
+  </article>
+
+</div>
+
+  <%- include('layouts/footer'); -%>
+
+</body>
+</html>

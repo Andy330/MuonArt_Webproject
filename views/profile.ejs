@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="/css/muonstyle.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+</head>
+<body>
+
+<%- include('layouts/navbar'); -%>
+
+<h2><User></h2>
+<div class="cont">
+  <div class="userdata">
+    <img class = "avatar" src="https://sun9-75.userapi.com/cdh-6UGXYnluDoneERojxUvc59GBAl_LDNctHA/34Fjhb9-bXM.jpg" >
+    <p>Username: <%= user.username %> <br> <%= user.lastname %> <%= user.name %></p>
+  </div>
+  <div class="posts">
+    <a href="/create" class="newpost">New Post </a>
+      <% for (var i = posts.length - 1; i >= 0; i--) { %>
+        <div class="col">
+      <div class="post-preview">
+        <a href="/post/<%= posts[i]._id %>" class="pos">
+        <p class="post-meta">Posted by <%= posts[i].userid.username %></p>
+          <img src='<%= posts[i].image %>' />
+          <p><%= posts[i].datePosted.toLocaleString() %></p>
+        </a>
+        </div>
+        </div>
+      <% } %>
+  </div>
+</div>
+
+<%- include('layouts/footer'); -%>
+
+</body>
+</html>
